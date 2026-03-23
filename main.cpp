@@ -271,6 +271,7 @@ int main() {
         prey.draw(window);
 
         if (player.check_wall_collision() || player.check_self_collision()) {
+            mvwprintw(window, 0, 2, " Score: %d ", score);
             showGameOverMessage(window);
             wrefresh(window);
             std::this_thread::sleep_for(std::chrono::seconds(10));
@@ -280,7 +281,7 @@ int main() {
         if (player.check_mouse_collision(prey)) {
             prey.move();
         }
-
+        mvwprintw(window, 0, 2, " Score: %d ", score);
         wrefresh(window);
 
     }
