@@ -132,11 +132,6 @@ public:
         return {HEAD->x,HEAD->y};
     }
 
-    void setHeadCoords(pii newcoords) {
-        HEAD->x = newcoords.first;
-        HEAD->y = newcoords.second;
-    }
-
     void removeTail() {
         SNAKENODE* oldtail = TAIL;
         TAIL = oldtail->next;
