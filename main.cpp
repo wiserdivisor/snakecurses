@@ -211,7 +211,7 @@ public:
         while (checknode != nullptr) {
             pii checkcoords = checknode->getCoords();
             bool xmatched = checkcoords.first == headcoords.first;
-            bool ymatched = checkcoords.second == headcoords.second || checkcoords.second == headcoords.second+1 || checkcoords.second == headcoords.second-1;
+            bool ymatched = checkcoords.second == headcoords.second || checkcoords.second == headcoords.second+1;
 
             if (xmatched && ymatched) {
                 return true;
@@ -226,7 +226,8 @@ public:
         pii preycoords = prey.getCoords();
         pii playercoords = getHeadCoords();
         bool xmatched = preycoords.first == playercoords.first;
-        bool ymatched = preycoords.second == playercoords.second || preycoords.second+1 == playercoords.second || preycoords.second-1 == playercoords.second;
+        bool ymatched = preycoords.second == playercoords.second || preycoords.second == playercoords.second+1;
+
         if (xmatched && ymatched) {
             caught_mouse = true;
             collided = true;
